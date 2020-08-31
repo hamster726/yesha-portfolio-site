@@ -3,7 +3,7 @@ import ParticlesBg from "particles-bg";
 import {StyledNavContainer, Banner, BannerText, HeaderRow, BannerDescription, BannerButtonContainer} from "./style";
 import {faGithub} from '@fortawesome/free-brands-svg-icons'
 import {faFileCode} from "@fortawesome/free-regular-svg-icons";
-
+import {Link as ScrollLink, animateScroll as scroll} from "react-scroll";
 import {
     Collapse,
     Navbar,
@@ -21,28 +21,34 @@ const Header = (props) => {
 
     const toggle = () => setIsOpen(!isOpen);
 
+    const NavItemScroll = (name) => {
+        return (
+            <NavItem>
+                <ScrollLink activeClass="active"
+                            to={'#' + name.toLowerCase()}
+                            spy={true}
+                            smooth={true}
+                            offset={0}
+                            duration={0}>
+                    <NavLink>{name}</NavLink>
+                </ScrollLink>
+            </NavItem>
+        )
+    }
 
     return (
         <>
-            <HeaderRow id='#home'>
+            <HeaderRow id={'#home'}>
                 <ParticlesBg num={7} type="circle" bg/>
                 <StyledNavContainer>
-                    <Navbar color="transparent" light expand="md">
+                    <Navbar color="transparent" light expand="md" fixed>
                         <NavbarToggler onClick={toggle}/>
                         <Collapse isOpen={isOpen} navbar>
                             <Nav className="mr-auto" navbar horizontal>
-                                <NavItem>
-                                    <NavLink href="#home">HOME</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink href="#about">ABOUT</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink href="#resume">RESUME</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink href="#portfolio">WORKS</NavLink>
-                                </NavItem>
+                                    {NavItemScroll('HOME')}
+                                    {NavItemScroll('ABOUT')}
+                                    {NavItemScroll('RESUME')}
+                                    {NavItemScroll('CONTACT')}
                             </Nav>
                         </Collapse>
                     </Navbar>
@@ -57,15 +63,15 @@ const Header = (props) => {
                     </BannerDescription>
                     <BannerDescription>Glad to see you 👋</BannerDescription>
                     <BannerButtonContainer>
-                        <a href='#' target='_blank'>
+                        <a href='https://github.com/hamster726/yesha-portfolio-site' target='_blank'>
                             <Button color='secondary' size="lg">
                                 <FontAwesomeIcon icon={faFileCode}/> Source
                             </Button>
                         </a>
                         <a href='https://github.com/hamster726' target='_blank'>
-                        <Button color='primary' size="lg">
-                            <FontAwesomeIcon icon={faGithub}/> Github
-                        </Button>
+                            <Button color='primary' size="lg">
+                                <FontAwesomeIcon icon={faGithub}/> Github
+                            </Button>
                         </a>
                     </BannerButtonContainer>
                 </Banner>

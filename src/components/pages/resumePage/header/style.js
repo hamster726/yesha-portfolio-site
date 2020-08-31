@@ -20,7 +20,7 @@ display: flex;
 justify-content:center;
 flex-direction: column;
 align-items: center;
-width: 500px;
+max-width: 900px;
 
 `
 const BannerText = styled.h1`
@@ -36,23 +36,24 @@ font-size: 1.25rem;
 
 const BannerButtonContainer = styled.div`
 display: flex;
-width: 60%;
+width: 320px;
 justify-content: space-around;
 
-@media screen and (max-width: 320x){
-width: 80%;
-}
-@media screen and (max-width: 768px){
-width: 100%;
-}
 
 `
+
+
+let vh = window.innerHeight * 0.01;
+window.addEventListener('resize', () => {
+    vh = window.innerHeight * 0.01;
+})
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 const HeaderRow = styled.div`
 display:flex;
 justify-content: center;
 align-items: center;
-height: 100vh;
+height: calc(var(--vh, 1vh) * 100);
 `
 
 

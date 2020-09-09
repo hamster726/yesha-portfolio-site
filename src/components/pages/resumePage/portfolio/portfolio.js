@@ -1,6 +1,8 @@
 import React from "react";
-import {StyledContainer, Description, PortfolioRow, Project, ProjectImg} from './style';
-import GotImage from './snap-react-got-wiki.png'
+import {StyledContainer, Description, PortfolioRow, Project, ProjectImg, ProjectDescription} from './style';
+import GotImage from './img/snap-react-got-wiki.jpg'
+import RestoImage from './img/snap-react-restaurant.jpg'
+import BlogImage from './img/snap-react-miniBlog.jpg'
 
 const Portfolio = () => {
     return (
@@ -10,16 +12,20 @@ const Portfolio = () => {
                 <Project>
                     <a href='https://react-got-wiki.web.app/' target='_blank'>
                         <ProjectImg src={GotImage}></ProjectImg>
-                        Game of Thrones Wiki
                     </a>
+                    <ProjectDescription>Game of Thrones Wiki</ProjectDescription>
                 </Project>
                 <Project>
-                    <a href='https://restaurant-app-yesha.web.app' target='_blank'>
-                        Restaurant-app
+                    <a href='https://restaurant-app-yesha.web.app/menu/' target='_blank'>
+                        <ProjectImg src={RestoImage}></ProjectImg>
                     </a>
+                    <ProjectDescription>Restaurant app</ProjectDescription>
                 </Project>
                 <Project>
-                    Simple Blog
+                    <a href='https://mini-blog-yesha.web.app/' target='_blank'>
+                        <ProjectImg src={BlogImage}></ProjectImg>
+                    </a>
+                    <ProjectDescription>Simple Blog</ProjectDescription>
                 </Project>
             </PortfolioRow>
         </StyledContainer>

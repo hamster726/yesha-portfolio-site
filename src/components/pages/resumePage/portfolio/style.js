@@ -33,6 +33,7 @@ justify-content: center;
 `
 const Project = styled(Col)`
 display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
 width: 320px;
@@ -41,6 +42,9 @@ height: 320px;
 const ProjectImg = styled.img`
 width: 100%
 `
+const ProjectDescription = styled.p`
+margin-top: 20px;
+`
 
 export {
     StyledContainer,
@@ -48,5 +52,6 @@ export {
     Description,
     PortfolioRow,
     Project,
-    ProjectImg
+    ProjectImg,
+    ProjectDescription
 }

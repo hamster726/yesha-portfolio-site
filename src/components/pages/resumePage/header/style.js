@@ -2,17 +2,20 @@ import React from "react";
 import styled from 'styled-components';
 import {Button} from 'reactstrap';
 
+
+
+
 const StyledNavContainer = styled.div`
+z-index: 9999;
 display:flex;
 justify-content: center;
 width: 100%;
-
 position:fixed;
 top:0;
-
 @media only screen and (max-width: 767px) {
 justify-content: flex-start;
 }
+
 `
 
 const Banner = styled.div`

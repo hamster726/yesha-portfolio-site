@@ -28,6 +28,7 @@ const Contact = () => {
                         <Input type="textarea" name="text" id="exampleText" placeholder="What is your offer?"/>
                     </FormGroup>
                     <Button color='warning'>Submit</Button>
+
                 </ContactsForm>
             </StyledRow>
         </StyledContainer>

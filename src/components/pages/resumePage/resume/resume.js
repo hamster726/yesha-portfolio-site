@@ -101,7 +101,7 @@ const data = {
         skills: [
             {
                 name: 'JavaScript ES6+',
-                level: '50'
+                level: '55'
             },
             {
                 name: 'React',
@@ -113,7 +113,7 @@ const data = {
             },
             {
                 name: 'React-router',
-                level: '55'
+                level: '65'
             },
             {
                 name: 'HTML \\ CSS',
@@ -134,6 +134,10 @@ const data = {
             {
                 name: 'REST api',
                 level: '60'
+            },
+            {
+                name: 'firebase',
+                level: '25'
             }
         ]
     },

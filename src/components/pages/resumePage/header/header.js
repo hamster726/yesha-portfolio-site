@@ -28,7 +28,7 @@ const Header = (props) => {
                             to={'#' + name.toLowerCase()}
                             spy={true}
                             smooth={true}
-                            offset={0}
+                            offset={1}
                             duration={0}>
                     <NavLink>{name}</NavLink>
                 </ScrollLink>
@@ -45,10 +45,11 @@ const Header = (props) => {
                         <NavbarToggler onClick={toggle}/>
                         <Collapse isOpen={isOpen} navbar>
                             <Nav className="mr-auto" navbar horizontal>
-                                    {NavItemScroll('HOME')}
-                                    {NavItemScroll('ABOUT')}
-                                    {NavItemScroll('RESUME')}
-                                    {NavItemScroll('CONTACT')}
+                                {NavItemScroll('HOME')}
+                                {NavItemScroll('ABOUT')}
+                                {NavItemScroll('RESUME')}
+                                {NavItemScroll('PORTFOLIO')}
+                                {NavItemScroll('CONTACT')}
                             </Nav>
                         </Collapse>
                     </Navbar>
@@ -56,7 +57,7 @@ const Header = (props) => {
 
                 <Banner>
                     <BannerText>
-                        I`m Yevhen Shaparenko
+                        I`m Yevhen Shaparenko
                     </BannerText>
                     <BannerDescription>
                         I am a beginner web developer ingeneer. This is my resume home page.

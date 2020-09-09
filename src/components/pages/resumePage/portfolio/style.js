@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {Container, Row, Col} from 'reactstrap';
 
 
+
 const StyledContainer = styled(Container)`
 display: flex;
 align-items: center;
@@ -29,21 +30,53 @@ margin-bottom: 40px;
 
 const PortfolioRow = styled(Row)`
 display: flex;
-justify-content: center;
+justify-content: space-around;
+
 `
 const Project = styled(Col)`
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-width: 320px;
-height: 320px;
+
+padding: 10px;
+margin-bottom: 40px;
+
+border-radius: .25rem;
+max-width: 350px;
+max-height: 400px;
+
+
+overflow:hidden;
+
+background-color: white;
+-webkit-box-shadow: 0px 0px 20px 0px rgba(100,100,100,0.75);
+-moz-box-shadow: 0px 0px 20px 0px rgba(100,100,100,0.75);
+box-shadow: 0px 0px 20px 0px rgba(100,100,100,0.75);
+
+transition: 0.2s;
+
+&:hover {
+transform: scale(1.05);
+}
 `
+
 const ProjectImg = styled.img`
-width: 100%
+width: 100%;
 `
 const ProjectDescription = styled.p`
 margin-top: 20px;
+`
+
+const Tools = styled(Row)`
+display: flex;
+width: 100%;
+margin: 0 10px;
+`
+
+const Tool = styled.img`
+width: 30px;
+margin: 0 5px;
 `
 
 export {
@@ -53,5 +86,7 @@ export {
     PortfolioRow,
     Project,
     ProjectImg,
-    ProjectDescription
+    ProjectDescription,
+    Tools,
+    Tool
 }

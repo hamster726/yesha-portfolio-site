@@ -29,7 +29,7 @@ function App() {
             <About/>
             <Resume/>
             <Portfolio/>
-            {/*<Contact/>*/}
+            <Contact/>
             {/*<Footer/>*/}
             <Plug fluid>
                 ⚠ Site under development ⚠ <br/>

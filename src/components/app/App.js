@@ -8,7 +8,6 @@ import Resume from "../pages/resumePage/resume";
 import Portfolio from "../pages/resumePage/portfolio";
 import Footer from "../pages/resumePage/footer";
 import Contact from "../pages/resumePage/contact";
-import {Route} from "react-router";
 import {Container} from "reactstrap";
 import styled from "styled-components";
 
@@ -17,7 +16,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 text-align: center;
-background-color: #30d5c8;
+background-color: orange;
 font-size: 1.5rem;
 height: 20vh;
 `
@@ -29,7 +28,7 @@ function App() {
             <Header/>
             <About/>
             <Resume/>
-            {/*<Portfolio/>*/}
+            <Portfolio/>
             {/*<Contact/>*/}
             {/*<Footer/>*/}
             <Plug fluid>

@@ -39,7 +39,7 @@ const Header = (props) => {
     return (
         <>
             <HeaderRow id={'#home'}>
-                <ParticlesBg num={7} type="circle" bg/>
+                <ParticlesBg color='#FBB124' num={7} type="circle" bg/>
                 <StyledNavContainer>
                     <Navbar color="transparent" light expand="md" fixed>
                         <NavbarToggler onClick={toggle}/>
@@ -56,7 +56,7 @@ const Header = (props) => {
 
                 <Banner>
                     <BannerText>
-                        Hello
+                        I`m Yevhen Shaparenko
                     </BannerText>
                     <BannerDescription>
                         I am a beginner web developer ingeneer. This is my resume home page.

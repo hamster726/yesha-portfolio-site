@@ -4,13 +4,13 @@ import {Container, Col, Button, Row} from "reactstrap";
 const StyledContainer = styled(Container)`
 display: flex;
 justify-content: center;
-padding: 50px 20px;
+padding: 90px 20px;
 min-height: 500px;
 background-color: #111;
 color: white;
 
 @media screen and (max-width: 768px) {
-min-height: calc(var(--vh, 1vh) * 100);
+min-height: calc(var(--vh, 1vh) * 101);
 }
 
 `

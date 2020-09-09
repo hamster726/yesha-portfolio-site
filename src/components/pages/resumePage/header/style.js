@@ -24,9 +24,13 @@ max-width: 900px;
 
 `
 const BannerText = styled.h1`
-font-size: 5rem;
+font-size: 4rem;
 text-align: center;
 margin-bottom: 30px;
+
+@media screen and (max-width: 768px) {
+font-size: 2rem;
+}
 `
 
 const BannerDescription = styled.p`

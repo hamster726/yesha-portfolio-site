@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Row, Container, Col} from "reactstrap";
+import {Row, Container, Col, Progress} from "reactstrap";
 
 
 
@@ -26,9 +26,9 @@ padding-bottom: 20px;
 border-bottom: 1px solid #ddd;
 `
 
-const ColAboutSection = styled(Col)`
+const ColSection = styled(Col)`
 text-align:left;
-font-size: 2rem;
+font-size: 1.75rem;
 text-decoration: underline;
 text-decoration-color: #007bff;
 margin-bottom: 50px;
@@ -38,33 +38,51 @@ margin-bottom: 50px;
 
 const ColDescription = styled(Col)`
 text-align: left;
-font-size: 1.25rem;
+font-size: 1.1rem;
 color: #aaa;
 `
 
 const ColText = styled.p`
-color: #888;
-font-style:italic;
+color: #555;
 `
 
 
-const ColHeadingH3 = styled.h3`
+const ColLabel = styled.h3`
 color: #222;
 display:flex;
 justify-content: left;
 width:100%;
-font-size: 1.5rem;
+font-size: 1.4rem;
 font-weight: bold;
-margin-bottom: 20px;
+margin-bottom: 10px;
 font-weight: normal;
 font-weight: bold;
+`
+
+const ColCompany = styled.i`
+display: inline-block;
+margin-bottom: 10px;
+
+`
+
+const ColData = styled.div`
+display: inline-block;
+
+`
+
+const SkillProgress = styled(Progress)`
+height: 30px;
+margin-bottom: 40px;
 `
 
 export {
     StyledRow,
     StyledContainer,
-    ColAboutSection,
+    ColSection,
     ColDescription,
-    ColHeadingH3,
-    ColText
+    ColLabel,
+    ColText,
+    ColCompany,
+    ColData,
+    SkillProgress
 }

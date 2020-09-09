@@ -13,7 +13,7 @@ const Contact = () => {
                 <ContactsForm className='text-light'>
                     <FormGroup>
                         <Label for="contactName">Name</Label>
-                        <Input type="text" name="contactName" id="contactName"/>
+                        <Input type="text" name="contactName" id="contactName" placeholder="Mark Zuckerberg"/>
                     </FormGroup>
                     <FormGroup>
                         <Label for="exampleEmail">Your Email</Label>
@@ -21,11 +21,11 @@ const Contact = () => {
                     </FormGroup>
                     <FormGroup>
                         <Label for="exampleText">Your company</Label>
-                        <Input type="textarea" name="text" id="exampleText"/>
+                        <Input type="textarea" name="text" id="exampleText" placeholder="Facebook"/>
                     </FormGroup>
                     <FormGroup>
                         <Label for="exampleText">Message</Label>
-                        <Input type="textarea" name="text" id="exampleText"/>
+                        <Input type="textarea" name="text" id="exampleText" placeholder="What is your offer?"/>
                     </FormGroup>
                     <Button color='warning'>Submit</Button>
                 </ContactsForm>

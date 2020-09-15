@@ -1,22 +1,26 @@
 import React from "react";
 import styled from 'styled-components';
-import {Button} from 'reactstrap';
+import {Col} from 'reactstrap';
 
 
 
 
-const StyledNavContainer = styled.div`
+let StyledNavContainer = styled.div`
 z-index: 9999;
 display:flex;
 justify-content: center;
 width: 100%;
 position:fixed;
 top:0;
+background-color: transparent;
 @media only screen and (max-width: 767px) {
 justify-content: flex-start;
+
 }
 
 `
+
+
 
 const Banner = styled.div`
 display: flex;
@@ -63,6 +67,28 @@ align-items: center;
 height: calc(var(--vh, 1vh) * 100);
 `
 
+const StyledLink = styled.a`
+color: inherit;
+text-decoration: none;
+
+transition: 0.3s;
+
+&:hover {
+color: #FBB124;
+text-decoration: none;
+
+}
+`
+const IconsCol = styled(Col)`
+font-size: 2rem;
+
+transition: 0.3s;
+
+&:hover {
+color: #FBB124;
+}
+`
+
 
 export {
     StyledNavContainer,
@@ -70,5 +96,7 @@ export {
     BannerText,
     BannerDescription,
     HeaderRow,
-    BannerButtonContainer
+    BannerButtonContainer,
+    StyledLink,
+    IconsCol
 }

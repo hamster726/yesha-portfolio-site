@@ -8,24 +8,26 @@ import {
     ColCompany,
     ColData,
     ColText,
-    SkillProgress
+    SkillProgress,
+    SkillRow
 } from "./style";
+import {Row, Col} from 'reactstrap';
 
 
 const renderInfoBlock = (section, data) => {
 
     const renderSection = () => {
         return (
-            <ColSection>
+            <ColSection md={4}>
                 {section}
             </ColSection>
         )
     }
 
     return (
-        <StyledRow xs={1} md={2} xl={2}>
+        <StyledRow>
             {renderSection()}
-            <ColDescription>
+            <ColDescription md={8}>
                 {data.map(({label, date, position, descr}) => {
                     return (
                         <>
@@ -48,24 +50,27 @@ const renderInfoBlock = (section, data) => {
 const renderSkillsBlock = (section, data) => {
     const renderSection = () => {
         return (
-            <ColSection>
+            <ColSection md={4}>
                 {section}
             </ColSection>
         )
     }
 
     return (
-        <StyledRow xs={1} md={2} xl={2}>
+        <StyledRow>
             {renderSection()}
-            <ColDescription>
+
+            <ColDescription md={8}>
                 {data.map((item) => {
                     return (
-                        <>
-                            <ColLabel>
+                        <SkillRow xs={12} md={12}>
+                            <ColLabel xs={12} md={1}>
                                 {item.name}
                             </ColLabel>
-                            <SkillProgress color="warning" value={item.level}/>
-                        </>
+                            <Col xs={12} md={8}>
+                                <SkillProgress color="warning" value={item.level}/>
+                            </Col>
+                        </SkillRow>
                     )
                 })}
             </ColDescription>
@@ -74,83 +79,17 @@ const renderSkillsBlock = (section, data) => {
     )
 }
 
-const data = {
-    resume: {
-        education: [
-            {
-                label: "Igor Sikorsky Kyiv Polytechnic Institute\n",
-                position: "Bachelour degree",
-                date: "Learn 2013-2017",
-                descr: "I learned in KPI!11!"
-            },
-            {
-                label: "The Complete JavaScript + React Course - From Scratch to Results",
-                position: "FrontEnd Developer",
-                date: "February 2020 - August 2020",
-                descr: "Good course, you know :)"
-            }
-        ],
-        work: [
-            {
-                label: 'Microlab™',
-                position: 'IT Support',
-                date: 'February 2018 - now',
-                descr: 'Now im working in Microlab. Supporting sites and CMS Bitrix-1C system',
-            },
-        ],
-        skills: [
-            {
-                name: 'JavaScript ES6+',
-                level: '55'
-            },
-            {
-                name: 'React',
-                level: '55'
-            },
-            {
-                name: 'Redux',
-                level: '55'
-            },
-            {
-                name: 'React-router',
-                level: '65'
-            },
-            {
-                name: 'HTML \\ CSS',
-                level: '65'
-            },
-            {
-                name: 'Webpack \\ npm',
-                level: '40'
-            },
-            {
-                name: 'Git',
-                level: '60'
-            },
-            {
-                name: 'styled-components',
-                level: '80'
-            },
-            {
-                name: 'REST api',
-                level: '60'
-            },
-            {
-                name: 'firebase',
-                level: '25'
-            }
-        ]
-    },
 
-}
 
-const Resume = () => {
+const Resume = ({data}) => {
+
+    const resumeData = data.resume;
 
     return (
         <StyledContainer fluid id={'#resume'}>
-            {renderInfoBlock('Education', data.resume.education)}
-            {renderInfoBlock('Work', data.resume.work)}
-            {renderSkillsBlock('Skills', data.resume.skills)}
+            {renderInfoBlock(resumeData.headers.education, resumeData.education)}
+            {renderInfoBlock(resumeData.headers.work, resumeData.work)}
+            {renderSkillsBlock(resumeData.headers.skills, resumeData.skills)}
         </StyledContainer>
     )
 }

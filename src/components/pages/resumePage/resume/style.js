@@ -29,8 +29,7 @@ border-bottom: 1px solid #ddd;
 const ColSection = styled(Col)`
 text-align:left;
 font-size: 1.75rem;
-text-decoration: underline;
-text-decoration-color: #007bff;
+text-decoration: underline #007bff;
 margin-bottom: 50px;
 
 `
@@ -47,16 +46,14 @@ color: #555;
 `
 
 
-const ColLabel = styled.h3`
-color: #222;
-display:flex;
-justify-content: left;
-width:100%;
-font-size: 1.4rem;
-font-weight: bold;
+const ColLabel = styled.div`
+display: flex;
+font-size: 1.25rem;
 margin-bottom: 10px;
 font-weight: normal;
-font-weight: bold;
+color: #222;
+padding-left: 15px;
+
 `
 
 const ColCompany = styled.i`
@@ -72,7 +69,10 @@ display: inline-block;
 
 const SkillProgress = styled(Progress)`
 height: 30px;
-margin-bottom: 40px;
+margin-bottom: 10px;
+`
+const SkillRow = styled(Row)`
+justify-content: space-between;
 `
 
 export {
@@ -84,5 +84,6 @@ export {
     ColText,
     ColCompany,
     ColData,
-    SkillProgress
+    SkillProgress,
+    SkillRow
 }

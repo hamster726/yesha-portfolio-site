@@ -44,7 +44,7 @@ margin-bottom: 40px;
 
 border-radius: .25rem;
 max-width: 350px;
-max-height: 400px;
+max-height: 500px;
 
 
 overflow:hidden;

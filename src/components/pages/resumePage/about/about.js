@@ -1,41 +1,75 @@
-import React from "react";
-import {StyledContainer, Avatar, Description, StyledCol, DescriptionH3, ButtonResume, StyledRow} from "./style";
+import React, {Component} from "react";
+import {
+    StyledContainer,
+    Avatar,
+    Description,
+    StyledCol,
+    DescriptionH3,
+    ButtonResume,
+    StyledRow,
+    StyledLink
+} from "./style";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faDownload} from "@fortawesome/free-solid-svg-icons";
 import Resume from './resume-2.pdf'
 
 import avatarImg from './avatar.jpg';
 
-const About = () => {
-    return (
-        <StyledContainer fluid id={'#about'}>
-            <StyledRow xs={1} md={2}>
-                <StyledCol>
-                    <Avatar src={avatarImg}/>
-                </StyledCol>
-                <StyledCol>
-                    <DescriptionH3>
-                        About me
-                    </DescriptionH3>
-                    <Description>
-                        Это тестовое описание о том, что программист все дела, хотел бы рассказать насколько
-                        я крут, но я еще не придумал текст. Вот.
-                    </Description>
-                    <DescriptionH3>
-                        Contact
-                    </DescriptionH3>
-                    <Description>
-                        А здесь я решил сделать второй абзац, ну мол могу же. Вот теперь тут есть второй абзац :)
-                    </Description>
-                    <a download href={Resume}>
-                        <ButtonResume color='primary'>
-                            <FontAwesomeIcon icon={faDownload}/> Download Resume
-                        </ButtonResume>
-                    </a>
-                </StyledCol>
-            </StyledRow>
-        </StyledContainer>
-    )
+class About extends Component {
+    render() {
+        const data = this.props.data.about;
+
+
+        return (
+            <StyledContainer fluid id={'#about'}>
+                <StyledRow xs={1} md={2}>
+                    <StyledCol md={4}>
+                        <Avatar src={avatarImg}/>
+                    </StyledCol>
+                    <StyledCol md={8}>
+                        <DescriptionH3>
+                            {data.aboutHeading}
+                        </DescriptionH3>
+                        <Description>
+                            {data.aboutText}
+                        </Description>
+                        <DescriptionH3>
+                            {data.contactHeading}
+                        </DescriptionH3>
+                        <Description>
+                            <p>
+
+
+                                <StyledLink href={`https://goo.gl/maps/JTq4FFFa9YzEDRrK7`}
+                                            target='_blank'>
+                                    {data.contactText}
+                                </StyledLink>
+                            </p>
+                            <p>
+                                <StyledLink href={`mailto:${data.email}`}
+                                            target='_blank'>
+                                    {data.email}
+                                </StyledLink>
+                            </p>
+                            <p>
+                                <StyledLink href={`tel:${data.phone}`}
+                                            target='_blank'>
+                                    {data.phone}
+                                </StyledLink>
+                            </p>
+                        </Description>
+                        <a download href={Resume}>
+                            <ButtonResume color='primary'>
+                                <FontAwesomeIcon icon={faDownload}/> {data.downloadResume}
+                            </ButtonResume>
+                        </a>
+                    </StyledCol>
+                </StyledRow>
+            </StyledContainer>
+        )
+    }
+
+
 }
 
 export default About;

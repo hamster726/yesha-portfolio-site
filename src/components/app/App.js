@@ -1,12 +1,11 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
+import data from './../../db.json'
 import Header from "../pages/resumePage/header";
 import About from "../pages/resumePage/about/about";
 import Resume from "../pages/resumePage/resume";
 import Portfolio from "../pages/resumePage/portfolio";
-import Footer from "../pages/resumePage/footer";
 import Contact from "../pages/resumePage/contact";
 import {Container} from "reactstrap";
 import styled from "styled-components";
@@ -22,20 +21,30 @@ height: 20vh;
 `
 
 function App() {
+
+    const lang = 'ru';
+
+    let translatedData = data;
+
+    switch (lang) {
+        case "ru":
+            translatedData = data.ru;
+            break;
+        case "en":
+            translatedData = data.en;
+            break;
+        default:
+            translatedData = data.ru;
+    }
+
     return (
         <>
 
-            <Header/>
-            <About/>
-            <Resume/>
-            <Portfolio/>
-            <Contact/>
-            {/*<Footer/>*/}
-            <Plug fluid>
-                ⚠ Site under development ⚠ <br/>
-                Wait for updates
-                <br/>🧱🧱👷‍♂️ 👷‍♀️🧱🧱
-            </Plug>
+            <Header data={data}/>
+            <About data={data}/>
+            <Resume data={data}/>
+            <Portfolio data={data}/>
+            <Contact data={data}/>
         </>
 
     );

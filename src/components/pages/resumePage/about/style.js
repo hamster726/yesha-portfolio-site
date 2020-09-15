@@ -33,7 +33,7 @@ font-weight: bold;
 margin-bottom: 20px;
 `
 const Description = styled.p`
-color: white;
+color: #666;
 font-size: 1rem;
 text-align: left;
 `
@@ -60,6 +60,19 @@ margin: 30px 0;
 
 `
 
+const StyledLink = styled.a`
+color: inherit;
+text-decoration: none;
+
+transition: 0.3s;
+
+&:hover {
+color: white;
+text-decoration: none;
+
+}
+`
+
 export {
     StyledContainer,
     Avatar,
@@ -67,6 +80,7 @@ export {
     StyledCol,
     DescriptionH3,
     ButtonResume,
-    StyledRow
+    StyledRow,
+    StyledLink
 
 }

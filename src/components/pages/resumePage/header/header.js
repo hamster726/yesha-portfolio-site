@@ -1,8 +1,17 @@
-import React, {useState} from 'react';
+import React, {Component, useState} from 'react';
 import ParticlesBg from "particles-bg";
-import {StyledNavContainer, Banner, BannerText, HeaderRow, BannerDescription, BannerButtonContainer} from "./style";
-import {faGithub} from '@fortawesome/free-brands-svg-icons'
-import {faFileCode} from "@fortawesome/free-regular-svg-icons";
+import {
+    StyledNavContainer,
+    Banner,
+    BannerText,
+    HeaderRow,
+    BannerDescription,
+    BannerButtonContainer,
+    StyledLink,
+    IconsCol
+} from "./style";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faFacebook, faGithub, faInstagram, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 import {Link as ScrollLink, animateScroll as scroll} from "react-scroll";
 import {
     Collapse,
@@ -11,74 +20,92 @@ import {
     Nav,
     NavItem,
     NavLink,
-    Button
 } from 'reactstrap';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-const Header = (props) => {
 
-    const [isOpen, setIsOpen] = useState(false);
+class Header extends Component {
 
-    const toggle = () => setIsOpen(!isOpen);
 
-    const NavItemScroll = (name) => {
+    state = {
+        isOpen: false
+    }
+
+    NavItemScroll = (tag, name) => {
         return (
             <NavItem>
                 <ScrollLink activeClass="active"
-                            to={'#' + name.toLowerCase()}
+                            to={'#' + tag.toLowerCase()}
                             spy={true}
                             smooth={true}
                             offset={1}
                             duration={0}>
-                    <NavLink>{name}</NavLink>
+                    <NavLink>{name.toUpperCase()}</NavLink>
                 </ScrollLink>
             </NavItem>
         )
     }
 
-    return (
-        <>
-            <HeaderRow id={'#home'}>
-                <ParticlesBg color='#FBB124' num={7} type="circle" bg/>
-                <StyledNavContainer>
-                    <Navbar color="transparent" light expand="md" fixed>
-                        <NavbarToggler onClick={toggle}/>
-                        <Collapse isOpen={isOpen} navbar>
-                            <Nav className="mr-auto" navbar horizontal>
-                                {NavItemScroll('HOME')}
-                                {NavItemScroll('ABOUT')}
-                                {NavItemScroll('RESUME')}
-                                {NavItemScroll('PORTFOLIO')}
-                                {NavItemScroll('CONTACT')}
-                            </Nav>
-                        </Collapse>
-                    </Navbar>
-                </StyledNavContainer>
+    ToggleNav = () => {
+        const {isOpen} = this.state;
 
-                <Banner>
-                    <BannerText>
-                        I`m Yevhen Shaparenko
-                    </BannerText>
-                    <BannerDescription>
-                        I am a beginner web developer ingeneer. This is my resume home page.
-                    </BannerDescription>
-                    <BannerDescription>Glad to see you 👋</BannerDescription>
-                    <BannerButtonContainer>
-                        <a href='https://github.com/hamster726/yesha-portfolio-site' target='_blank'>
-                            <Button color='secondary' size="lg">
-                                <FontAwesomeIcon icon={faFileCode}/> Source
-                            </Button>
-                        </a>
-                        <a href='https://github.com/hamster726' target='_blank'>
-                            <Button color='primary' size="lg">
-                                <FontAwesomeIcon icon={faGithub}/> Github
-                            </Button>
-                        </a>
-                    </BannerButtonContainer>
-                </Banner>
-            </HeaderRow>
-        </>
-    );
+        this.setState({isOpen: !isOpen})
+    }
+
+
+    render() {
+
+        const data = this.props.data.header;
+        const {isOpen} = this.state;
+
+
+        return (
+            <>
+                <HeaderRow id={'#home'}>
+                    <ParticlesBg color='#FBB124' num={7} type="circle" bg/>
+                    <StyledNavContainer>
+                        <Navbar light expand="md" fixed>
+                            <NavbarToggler onClick={this.ToggleNav}/>
+                            <Collapse isOpen={isOpen} navbar>
+                                <Nav className="mr-auto" navbar horizontal>
+                                    {this.NavItemScroll('HOME', data.navbar.home)}
+                                    {this.NavItemScroll('ABOUT', data.navbar.about)}
+                                    {this.NavItemScroll('RESUME', data.navbar.resume)}
+                                    {this.NavItemScroll('PORTFOLIO', data.navbar.portfolio)}
+                                    {this.NavItemScroll('CONTACT', data.navbar.contact)}
+                                </Nav>
+                            </Collapse>
+                        </Navbar>
+                    </StyledNavContainer>
+
+                    <Banner>
+                        <BannerText>
+                            {data.banner.bannerDescr}
+                        </BannerText>
+                        <BannerDescription>
+                            {data.banner.bannerText}
+                        </BannerDescription>
+                        <BannerDescription>
+                            {data.banner.bannerHello}
+                        </BannerDescription>
+                        <BannerButtonContainer>
+                            <IconsCol><StyledLink href='https://www.facebook.com/yevhen.shaparenko'
+                                                  target='_blank'><FontAwesomeIcon
+                                icon={faFacebook}/></StyledLink></IconsCol>
+                            <IconsCol><StyledLink href='https://www.instagram.com/hamster726/ '
+                                                  target='_blank'><FontAwesomeIcon
+                                icon={faInstagram}/></StyledLink></IconsCol>
+                            <IconsCol><StyledLink href='https://github.com/hamster726' target='_blank'><FontAwesomeIcon
+                                icon={faGithub}/></StyledLink></IconsCol>
+                            <IconsCol><StyledLink href='https://www.linkedin.com/in/yevhen-shaparenko-a369aa109/'
+                                                  target='_blank'><FontAwesomeIcon
+                                icon={faLinkedin}/></StyledLink></IconsCol>
+                        </BannerButtonContainer>
+                    </Banner>
+                </HeaderRow>
+            </>
+        );
+    }
+
 }
 
 export default Header;

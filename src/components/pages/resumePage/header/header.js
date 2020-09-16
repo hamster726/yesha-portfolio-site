@@ -8,17 +8,17 @@ import {
     BannerDescription,
     BannerButtonContainer,
     StyledLink,
-    IconsCol
+    IconsCol,
+    StyledNavbar,
+    StyledNavItem
 } from "./style";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebook, faGithub, faInstagram, faLinkedin} from '@fortawesome/free-brands-svg-icons'
-import {Link as ScrollLink, animateScroll as scroll} from "react-scroll";
+import {Link as ScrollLink} from "react-scroll";
 import {
     Collapse,
-    Navbar,
     NavbarToggler,
     Nav,
-    NavItem,
     NavLink,
 } from 'reactstrap';
 
@@ -32,16 +32,16 @@ class Header extends Component {
 
     NavItemScroll = (tag, name) => {
         return (
-            <NavItem>
+            <StyledNavItem>
                 <ScrollLink activeClass="active"
                             to={'#' + tag.toLowerCase()}
                             spy={true}
                             smooth={true}
-                            offset={1}
+                            offset={0}
                             duration={0}>
                     <NavLink>{name.toUpperCase()}</NavLink>
                 </ScrollLink>
-            </NavItem>
+            </StyledNavItem>
         )
     }
 
@@ -63,7 +63,7 @@ class Header extends Component {
                 <HeaderRow id={'#home'}>
                     <ParticlesBg color='#FBB124' num={7} type="circle" bg/>
                     <StyledNavContainer>
-                        <Navbar light expand="md" fixed>
+                        <StyledNavbar light expand="md" fixed>
                             <NavbarToggler onClick={this.ToggleNav}/>
                             <Collapse isOpen={isOpen} navbar>
                                 <Nav className="mr-auto" navbar horizontal>
@@ -74,7 +74,7 @@ class Header extends Component {
                                     {this.NavItemScroll('CONTACT', data.navbar.contact)}
                                 </Nav>
                             </Collapse>
-                        </Navbar>
+                        </StyledNavbar>
                     </StyledNavContainer>
 
                     <Banner>

@@ -1,4 +1,5 @@
 import React from "react";
+import {Col} from 'reactstrap';
 import {
     StyledRow,
     StyledContainer,
@@ -9,9 +10,10 @@ import {
     ColData,
     ColText,
     SkillProgress,
-    SkillRow
+    SkillRow,
+    SectionText,
+    SectionImg
 } from "./style";
-import {Row, Col} from 'reactstrap';
 
 
 const renderInfoBlock = (section, data) => {
@@ -19,7 +21,10 @@ const renderInfoBlock = (section, data) => {
     const renderSection = () => {
         return (
             <ColSection md={4}>
-                {section}
+                <SectionImg>/</SectionImg>
+                <SectionText>
+                    {section}
+                </SectionText>
             </ColSection>
         )
     }
@@ -51,7 +56,10 @@ const renderSkillsBlock = (section, data) => {
     const renderSection = () => {
         return (
             <ColSection md={4}>
-                {section}
+                <SectionImg>/</SectionImg>
+                <SectionText>
+                    {section}
+                </SectionText>
             </ColSection>
         )
     }
@@ -64,7 +72,7 @@ const renderSkillsBlock = (section, data) => {
                 {data.map((item) => {
                     return (
                         <SkillRow xs={12} md={12}>
-                            <ColLabel xs={12} md={1}>
+                            <ColLabel skills xs={12} md={1}>
                                 {item.name}
                             </ColLabel>
                             <Col xs={12} md={8}>

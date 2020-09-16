@@ -38,7 +38,7 @@ const IconsCol = styled(Col)`
 font-size: 2rem;
 
 transition: 0.3s;
-
+color: #555;
 &:hover {
 color: white;
 }

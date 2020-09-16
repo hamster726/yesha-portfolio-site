@@ -11,7 +11,7 @@ import {
 } from "./style";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faDownload} from "@fortawesome/free-solid-svg-icons";
-import Resume from './resume-2.pdf'
+import Resume from './Yevhen-Shaparenko-resume-eng.pdf'
 
 import avatarImg from './avatar.jpg';
 
@@ -58,8 +58,8 @@ class About extends Component {
                                 </StyledLink>
                             </p>
                         </Description>
-                        <a download href={Resume}>
-                            <ButtonResume color='primary'>
+                        <a href={Resume} target='_blank'>
+                            <ButtonResume color='warning' size='lg'>
                                 <FontAwesomeIcon icon={faDownload}/> {data.downloadResume}
                             </ButtonResume>
                         </a>

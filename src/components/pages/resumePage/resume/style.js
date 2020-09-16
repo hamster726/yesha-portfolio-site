@@ -27,11 +27,42 @@ border-bottom: 1px solid #ddd;
 `
 
 const ColSection = styled(Col)`
+display:flex;
+align-items: flex-start;
+
+@media screen and (max-width: 768px) {
+
+margin-bottom: 50px;
+}
+`
+
+const SectionText = styled.div`
 text-align:left;
 font-size: 1.75rem;
-text-decoration: underline #007bff;
-margin-bottom: 50px;
+font-weight: bold;
+padding: 0 10px;
+border-bottom: 3px solid #FBB124;
 
+`
+
+const SectionImg = styled.div`
+display:flex;
+justify-content: center;
+align-items: center;
+padding:0;
+margin:0;
+
+width: 50px;
+
+font-size: 1.75rem;
+font-weight: bold;
+background-color: #FBB124;
+color: white;
+border-bottom: 3px solid #FBB124;
+
+border-top-left-radius: 0.25rem;
+border-top-right-radius: 0.25rem;
+border-bottom-left-radius: 0.25rem;
 `
 
 
@@ -39,10 +70,12 @@ const ColDescription = styled(Col)`
 text-align: left;
 font-size: 1.1rem;
 color: #aaa;
+
 `
 
 const ColText = styled.p`
 color: #555;
+margin-bottom: 3rem;
 `
 
 
@@ -52,9 +85,11 @@ font-size: 1.25rem;
 margin-bottom: 10px;
 font-weight: normal;
 color: #222;
-padding-left: 15px;
+margin-left: ${props => (props.skills ? `15px` : '0px')};
 
 `
+
+
 
 const ColCompany = styled.i`
 display: inline-block;
@@ -85,5 +120,7 @@ export {
     ColCompany,
     ColData,
     SkillProgress,
-    SkillRow
+    SkillRow,
+    SectionText,
+    SectionImg
 }

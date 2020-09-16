@@ -1,23 +1,41 @@
 import React from "react";
 import styled from 'styled-components';
-import {Col} from 'reactstrap';
+import {Col, Navbar, NavItem} from 'reactstrap';
 
 
 
 
-let StyledNavContainer = styled.div`
+const StyledNavContainer = styled.div`
 z-index: 9999;
 display:flex;
 justify-content: center;
 width: 100%;
 position:fixed;
 top:0;
-background-color: transparent;
+background-color: rgba(255, 255, 255, 0.5);
+
 @media only screen and (max-width: 767px) {
 justify-content: flex-start;
-
+background-color: transparent;
 }
+`
 
+const StyledNavbar = styled(Navbar)`
+transition: 0.5s;
+
+@media only screen and (max-width: 767px) {
+background-color: rgba(255, 255, 255, 0.7);
+padding: 0;
+margin: 16px;
+border-radius: 0.25rem;
+}
+`
+
+const StyledNavItem = styled(NavItem)`
+
+@media only screen and (max-width: 767px) {
+padding-left: 1rem;;
+}
 `
 
 
@@ -98,5 +116,7 @@ export {
     HeaderRow,
     BannerButtonContainer,
     StyledLink,
-    IconsCol
+    IconsCol,
+    StyledNavbar,
+    StyledNavItem
 }

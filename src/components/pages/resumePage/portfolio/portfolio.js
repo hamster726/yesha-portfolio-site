@@ -27,17 +27,6 @@ class Portfolio extends Component {
                 <Description>{data.heading}</Description>
                 <PortfolioRow xs={1} md={4}>
                     <Project>
-                        <a href='https://react-got-wiki.web.app/' target='_blank'>
-                            <ProjectImg src={GotImage}></ProjectImg>
-                        </a>
-                        <ProjectDescription>Game of Thrones Wiki</ProjectDescription>
-                        <Tools>
-                            <Tool src={JSImg}/>
-                            <Tool src={ReactImg}/>
-                            <Tool src={ReactRouter}/>
-                        </Tools>
-                    </Project>
-                    <Project>
                         <a href='https://restaurant-app-yesha.web.app/menu/' target='_blank'>
                             <ProjectImg src={RestoImage}></ProjectImg>
                         </a>
@@ -46,6 +35,17 @@ class Portfolio extends Component {
                             <Tool src={JSImg}/>
                             <Tool src={ReactImg}/>
                             <Tool src={ReduxImg}/>
+                            <Tool src={ReactRouter}/>
+                        </Tools>
+                    </Project>
+                    <Project>
+                        <a href='https://react-got-wiki.web.app/' target='_blank'>
+                            <ProjectImg src={GotImage}></ProjectImg>
+                        </a>
+                        <ProjectDescription>Game of Thrones Wiki</ProjectDescription>
+                        <Tools>
+                            <Tool src={JSImg}/>
+                            <Tool src={ReactImg}/>
                             <Tool src={ReactRouter}/>
                         </Tools>
                     </Project>

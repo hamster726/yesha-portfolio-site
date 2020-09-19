@@ -42,6 +42,8 @@ font-size: 1.75rem;
 font-weight: bold;
 padding: 0 10px;
 border-bottom: 3px solid #FBB124;
+border-left: 3px solid #FBB124;
+
 
 `
 
@@ -52,7 +54,7 @@ align-items: center;
 padding:0;
 margin:0;
 
-width: 50px;
+width: 45px;
 
 font-size: 1.75rem;
 font-weight: bold;
@@ -61,7 +63,6 @@ color: white;
 border-bottom: 3px solid #FBB124;
 
 border-top-left-radius: 0.25rem;
-border-top-right-radius: 0.25rem;
 border-bottom-left-radius: 0.25rem;
 `
 

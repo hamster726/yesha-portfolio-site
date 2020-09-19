@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import data from './../../db.json'
@@ -20,34 +20,57 @@ font-size: 1.5rem;
 height: 20vh;
 `
 
-function App() {
+class App extends Component {
 
-    const lang = 'ru';
-
-    let translatedData = data;
-
-    switch (lang) {
-        case "ru":
-            translatedData = data.ru;
-            break;
-        case "en":
-            translatedData = data.en;
-            break;
-        default:
-            translatedData = data.ru;
+    state = {
+        lang: 'en'
     }
 
-    return (
-        <>
 
-            <Header data={data}/>
-            <About data={data}/>
-            <Resume data={data}/>
-            <Portfolio data={data}/>
-            <Contact data={data}/>
-        </>
+    ChangeLang = (lang) => {
 
-    );
+        if (lang === 'ru') {
+            this.setState({
+                lang: 'ru'
+            })
+        } else {
+            this.setState({
+                lang: 'en'
+            })
+        }
+    }
+
+    render() {
+
+        const {lang} = this.state;
+
+        let translatedData = data;
+
+        switch (lang) {
+            case "ru":
+                translatedData = data.ru;
+                break;
+            case "en":
+                translatedData = data.en;
+                break;
+            default:
+                translatedData = data.ru;
+        }
+
+        return (
+            <>
+
+                <Header data={translatedData} ChangeLang={this.ChangeLang}/>
+                <About data={translatedData}/>
+                <Resume data={translatedData}/>
+                <Portfolio data={translatedData}/>
+                <Contact data={translatedData}/>
+            </>
+
+        );
+    }
+
+
 }
 
 export default App;

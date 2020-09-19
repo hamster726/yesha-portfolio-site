@@ -21,9 +21,24 @@ background-color: transparent;
 `
 
 const StyledNavbar = styled(Navbar)`
-transition: 0.5s;
 
 @media only screen and (max-width: 767px) {
+background-color: rgba(255, 255, 255, 0.7);
+padding: 0;
+margin: 16px;
+border-radius: 0.25rem;
+}
+`
+
+const LangSwitcher = styled(Navbar)`
+position: absolute;
+right: 0px;
+top: 0px;
+
+list-style-type: none;
+
+@media only screen and (max-width: 767px) {
+
 background-color: rgba(255, 255, 255, 0.7);
 padding: 0;
 margin: 16px;
@@ -65,7 +80,7 @@ font-size: 1.25rem;
 
 const BannerButtonContainer = styled.div`
 display: flex;
-width: 320px;
+width: 100px;
 justify-content: space-around;
 
 
@@ -118,5 +133,6 @@ export {
     StyledLink,
     IconsCol,
     StyledNavbar,
-    StyledNavItem
+    StyledNavItem,
+    LangSwitcher
 }

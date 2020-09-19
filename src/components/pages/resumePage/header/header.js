@@ -10,9 +10,11 @@ import {
     StyledLink,
     IconsCol,
     StyledNavbar,
-    StyledNavItem
+    StyledNavItem,
+    LangSwitcher
 } from "./style";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faGlobeAmericas} from "@fortawesome/free-solid-svg-icons";
 import {faFacebook, faGithub, faInstagram, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 import {Link as ScrollLink} from "react-scroll";
 import {
@@ -20,6 +22,11 @@ import {
     NavbarToggler,
     Nav,
     NavLink,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    NavbarText
 } from 'reactstrap';
 
 
@@ -75,6 +82,23 @@ class Header extends Component {
                                 </Nav>
                             </Collapse>
                         </StyledNavbar>
+
+                            <LangSwitcher light>
+                                    <UncontrolledDropdown>
+                                        <DropdownToggle color={'transparent'}>
+                                            <FontAwesomeIcon icon={faGlobeAmericas}/>
+                                        </DropdownToggle>
+                                        <DropdownMenu right>
+                                            <DropdownItem onClick={() => this.props.ChangeLang('ru')}>
+                                                Russian
+                                            </DropdownItem>
+                                            <DropdownItem divider />
+                                            <DropdownItem onClick={() => this.props.ChangeLang('en')}>
+                                                English
+                                            </DropdownItem>
+                                        </DropdownMenu>
+                                    </UncontrolledDropdown>
+                            </LangSwitcher>
                     </StyledNavContainer>
 
                     <Banner>

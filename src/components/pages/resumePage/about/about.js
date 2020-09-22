@@ -58,7 +58,7 @@ class About extends Component {
                                 </StyledLink>
                             </p>
                         </Description>
-                        <a href={Resume} target='_blank'>
+                        <a href={Resume} target='_blank' rel="noopener noreferrer">
                             <ButtonResume color='warning' size='lg'>
                                 <FontAwesomeIcon icon={faDownload}/> {data.downloadResume}
                             </ButtonResume>

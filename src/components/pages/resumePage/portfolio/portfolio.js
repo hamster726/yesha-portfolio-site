@@ -27,7 +27,7 @@ class Portfolio extends Component {
                 <Description>{data.heading}</Description>
                 <PortfolioRow xs={1} md={4}>
                     <Project>
-                        <a href='https://restaurant-app-yesha.web.app/menu/' target='_blank'>
+                        <a href='https://restaurant-app-yesha.web.app/menu/' target='_blank' rel="noopener noreferrer">
                             <ProjectImg src={RestoImage}></ProjectImg>
                         </a>
                         <ProjectDescription>Restaurant app</ProjectDescription>
@@ -39,7 +39,7 @@ class Portfolio extends Component {
                         </Tools>
                     </Project>
                     <Project>
-                        <a href='https://react-got-wiki.web.app/' target='_blank'>
+                        <a href='https://react-got-wiki.web.app/' target='_blank' rel="noopener noreferrer">
                             <ProjectImg src={GotImage}></ProjectImg>
                         </a>
                         <ProjectDescription>Game of Thrones Wiki</ProjectDescription>
@@ -50,7 +50,7 @@ class Portfolio extends Component {
                         </Tools>
                     </Project>
                     <Project>
-                        <a href='https://mini-blog-yesha.web.app/' target='_blank'>
+                        <a href='https://mini-blog-yesha.web.app/' target='_blank' rel="noopener noreferrer">
                             <ProjectImg src={BlogImage}></ProjectImg>
                         </a>
                         <ProjectDescription>Simple Blog</ProjectDescription>

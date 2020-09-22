@@ -1,70 +1,74 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import data from './../../db.json'
 import Header from "../pages/resumePage/header";
 import About from "../pages/resumePage/about/about";
 import Resume from "../pages/resumePage/resume";
 import Portfolio from "../pages/resumePage/portfolio";
 import Contact from "../pages/resumePage/contact";
-import {Container} from "reactstrap";
-import styled from "styled-components";
+import PortfolioService from "../../services/portfolio-service";
+import Spinner from "../spinner";
 
-const Plug = styled(Container)`
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
-background-color: orange;
-font-size: 1.5rem;
-height: 20vh;
-`
 
 class App extends Component {
 
+    portfolioService = new PortfolioService();
+
     state = {
-        lang: 'en'
+        lang: null,
+        data: null,
+        loading: true,
+        loadingLang: false
+    }
+
+
+    componentDidMount() {
+        this.ChangeLang('en');
     }
 
 
     ChangeLang = (lang) => {
 
+        if (this.state.lang === lang) return;
+
         if (lang === 'ru') {
-            this.setState({
-                lang: 'ru'
-            })
+            this.portfolioService.getRussianLang()
+                .then(res => {
+                    this.setState({
+                        lang: lang,
+                        data: res,
+                        loading: false
+                    })
+                })
+
+
         } else {
-            this.setState({
-                lang: 'en'
-            })
+            this.portfolioService.getEnglishLang()
+                .then(res => {
+                    this.setState({
+                        lang: lang,
+                        data: res,
+                        loading: false
+
+                    })
+                })
         }
     }
 
     render() {
 
-        const {lang} = this.state;
+        const {data} = this.state;
 
-        let translatedData = data;
-
-        switch (lang) {
-            case "ru":
-                translatedData = data.ru;
-                break;
-            case "en":
-                translatedData = data.en;
-                break;
-            default:
-                translatedData = data.ru;
-        }
+        if (this.state.loading) return (<Spinner/>);
 
         return (
             <>
 
-                <Header data={translatedData} ChangeLang={this.ChangeLang}/>
-                <About data={translatedData}/>
-                <Resume data={translatedData}/>
-                <Portfolio data={translatedData}/>
-                <Contact data={translatedData}/>
+                <Header data={data} ChangeLang={this.ChangeLang}/>
+                <About data={data}/>
+                <Resume data={data}/>
+                <Portfolio data={data}/>
+                <Contact data={data}/>
             </>
 
         );

@@ -64,6 +64,10 @@ border-bottom: 3px solid #FBB124;
 
 border-top-left-radius: 0.25rem;
 border-bottom-left-radius: 0.25rem;
+
+&:before {
+content: "/"
+}
 `
 
 

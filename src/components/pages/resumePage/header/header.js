@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 import ParticlesBg from "particles-bg";
 import {
     StyledNavContainer,
@@ -26,7 +26,6 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
-    NavbarText
 } from 'reactstrap';
 
 
@@ -70,10 +69,10 @@ class Header extends Component {
                 <HeaderRow id={'#home'}>
                     <ParticlesBg color='#FBB124' num={7} type="circle" bg/>
                     <StyledNavContainer>
-                        <StyledNavbar light expand="md" fixed>
+                        <StyledNavbar light expand="md">
                             <NavbarToggler onClick={this.ToggleNav}/>
                             <Collapse isOpen={isOpen} navbar>
-                                <Nav className="mr-auto" navbar horizontal>
+                                <Nav className="mr-auto" navbar>
                                     {this.NavItemScroll('HOME', data.navbar.home)}
                                     {this.NavItemScroll('ABOUT', data.navbar.about)}
                                     {this.NavItemScroll('RESUME', data.navbar.resume)}

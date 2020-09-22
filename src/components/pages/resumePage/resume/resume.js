@@ -21,7 +21,7 @@ const renderInfoBlock = (section, data) => {
     const renderSection = () => {
         return (
             <ColSection md={4}>
-                <SectionImg>/</SectionImg>
+                <SectionImg/>
                 <SectionText>
                     {section}
                 </SectionText>
@@ -33,9 +33,9 @@ const renderInfoBlock = (section, data) => {
         <StyledRow>
             {renderSection()}
             <ColDescription md={8}>
-                {data.map(({label, date, position, descr}) => {
+                {data.map(({label, date, position, descr}, index) => {
                     return (
-                        <>
+                        <div key={index}>
                             <ColLabel>
                                 {label}
                             </ColLabel>
@@ -43,7 +43,7 @@ const renderInfoBlock = (section, data) => {
                             <ColText>
                                 {descr}
                             </ColText>
-                        </>
+                        </div>
                     )
                 })}
             </ColDescription>
@@ -56,7 +56,7 @@ const renderSkillsBlock = (section, data) => {
     const renderSection = () => {
         return (
             <ColSection md={4}>
-                <SectionImg>/</SectionImg>
+                <SectionImg/>
                 <SectionText>
                     {section}
                 </SectionText>
@@ -69,9 +69,9 @@ const renderSkillsBlock = (section, data) => {
             {renderSection()}
 
             <ColDescription md={8}>
-                {data.map((item) => {
+                {data.map((item, index) => {
                     return (
-                        <SkillRow xs={12} md={12}>
+                        <SkillRow xs={12} md={12} key={index}>
                             <ColLabel skills xs={12} md={1}>
                                 {item.name}
                             </ColLabel>
@@ -86,7 +86,6 @@ const renderSkillsBlock = (section, data) => {
 
     )
 }
-
 
 
 const Resume = ({data}) => {

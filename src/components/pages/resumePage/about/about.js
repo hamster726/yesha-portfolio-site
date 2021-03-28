@@ -11,13 +11,15 @@ import {
 } from "./style";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faDownload} from "@fortawesome/free-solid-svg-icons";
-import Resume from './Yevhen-Shaparenko-resume-eng.pdf'
+import ResumeEng from './Yevhen-Shaparenko-resume-eng.pdf'
+import ResumeRus from './Yevhen-Shaparenko-resume-rus.pdf'
 
 import avatarImg from './avatar.jpg';
 
 class About extends Component {
     render() {
         const data = this.props.data.about;
+        const resumeLink = this.props.lang === 'ru' ? ResumeRus : ResumeEng;
 
 
         return (
@@ -26,7 +28,7 @@ class About extends Component {
                     <StyledCol md={4}>
                         <Avatar src={avatarImg}/>
                     </StyledCol>
-                    <StyledCol md={8}>
+                    <StyledCol md={12}>
                         <DescriptionH3>
                             {data.aboutHeading}
                         </DescriptionH3>
@@ -58,7 +60,7 @@ class About extends Component {
                                 </StyledLink>
                             </p>
                         </Description>
-                        <a href={Resume} target='_blank' rel="noopener noreferrer">
+                        <a href={resumeLink} target='_blank' rel="noopener noreferrer">
                             <ButtonResume color='warning' size='lg'>
                                 <FontAwesomeIcon icon={faDownload}/> {data.downloadResume}
                             </ButtonResume>

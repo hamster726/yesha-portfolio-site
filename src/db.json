@@ -16,7 +16,7 @@
     },
     "about": {
       "aboutHeading": "Обо мне",
-      "aboutText": "Имею опыт работы 2 года в сфере IT технологий. Владею знаниями админимтрирования Битрикс 1С. Специалист ОС Windows. Владею английским уроня A2. Продвинутный пользователь Google. Есть свои \"pet\" проекты на JS + React. Готов к новым вызовам в IT!",
+      "aboutText": "Я веб-разработчик, полностью посвятивший себя созданию инновационных веб-сайтов, которые будут нравится пользователям. Всегда хочу учиться и делать лучший продукт :) Есть свои интересные \"pet\" проекты",
       "contactHeading": "Контакты",
       "contactText": "Украина, г. Киев, ул. Вацлава Гавела, 79",
       "phone": "+38 (068) 223 25 60",
@@ -62,31 +62,31 @@
       "skills": [
         {
           "name": "JavaScript ES6+",
-          "level": "50"
+          "level": "80"
         },
         {
           "name": "React",
-          "level": "65"
+          "level": "75"
         },
         {
           "name": "Redux",
-          "level": "55"
-        },
-        {
-          "name": "React-router",
-          "level": "50"
-        },
-        {
-          "name": "HTML \\ CSS",
           "level": "65"
         },
         {
+          "name": "React-router",
+          "level": "60"
+        },
+        {
+          "name": "HTML \\ CSS",
+          "level": "85"
+        },
+        {
           "name": "Webpack \\ npm",
-          "level": "40"
+          "level": "55"
         },
         {
           "name": "Git",
-          "level": "60"
+          "level": "70"
         },
         {
           "name": "styled-components",
@@ -98,7 +98,7 @@
         },
         {
           "name": "firebase",
-          "level": "20"
+          "level": "25"
         }
       ]
     }
@@ -121,7 +121,7 @@
     },
     "about": {
       "aboutHeading": "About me",
-      "aboutText": "I have 2 years of experience in the field of IT technologies. I have knowledge of Bitrix 1C administration. Windows OS specialist. I speak A2 English. Advanced Google user. I have my own \"pet\"projects on JS+React. Ready for new IT challenges!",
+      "aboutText": "Aspiring web developer who is fully committed to creating innovative websites that will appeal to users. I always want to learn and make the best product :) Have nice pet projects",
       "contactHeading": "Contacts",
       "contactText": "Ukraine, Kiev, Vatslava Havela st., 79",
       "phone": "+38 (068) 223 25 60",
@@ -167,31 +167,31 @@
       "skills": [
         {
           "name": "JavaScript ES6+",
-          "level": "50"
+          "level": "80"
         },
         {
           "name": "React",
-          "level": "65"
+          "level": "75"
         },
         {
           "name": "Redux",
-          "level": "55"
-        },
-        {
-          "name": "React-router",
-          "level": "50"
-        },
-        {
-          "name": "HTML \\ CSS",
           "level": "65"
         },
         {
+          "name": "React-router",
+          "level": "60"
+        },
+        {
+          "name": "HTML \\ CSS",
+          "level": "85"
+        },
+        {
           "name": "Webpack \\ npm",
-          "level": "40"
+          "level": "55"
         },
         {
           "name": "Git",
-          "level": "60"
+          "level": "70"
         },
         {
           "name": "styled-components",
@@ -203,7 +203,7 @@
         },
         {
           "name": "firebase",
-          "level": "20"
+          "level": "25"
         }
       ]
     }

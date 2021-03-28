@@ -47,6 +47,8 @@ border-radius: 0.25rem;
 
 const StyledNavItem = styled(NavItem)`
 
+cursor: pointer;
+
 @media only screen and (max-width: 767px) {
 padding-left: 1rem;;
 }

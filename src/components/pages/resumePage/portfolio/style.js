@@ -31,6 +31,7 @@ margin-bottom: 40px;
 const PortfolioRow = styled(Row)`
 display: flex;
 justify-content: space-around;
+flex-wrap: wrap;
 
 `
 const Project = styled(Col)`
@@ -40,7 +41,7 @@ justify-content: center;
 align-items: center;
 
 padding: 10px;
-margin-bottom: 40px;
+margin: 0 10px 40px 10px;
 
 border-radius: .25rem;
 max-width: 350px;
@@ -57,7 +58,7 @@ transition: 0.2s;
 
 
 &:hover {
-transform: scale(1.05);
+transform: translateY(-10px);
 
 -webkit-box-shadow: 0px 20px 20px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 20px 20px 0px rgba(0,0,0,0.75);
@@ -67,6 +68,7 @@ box-shadow: 0px 20px 20px 0px rgba(0,0,0,0.75);
 @media screen and (max-width: 768px) {
  &:hover {
   transform: none;
+  box-shadow: none;
  }
 }
 `
@@ -87,6 +89,7 @@ margin: 0 10px;
 const Tool = styled.img`
 width: 30px;
 margin: 0 5px;
+height: 30px;
 `
 
 export {

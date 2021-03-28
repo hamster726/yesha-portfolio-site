@@ -23,7 +23,7 @@ class App extends Component {
 
 
     componentDidMount() {
-        this.ChangeLang('en');
+        this.ChangeLang('ru');
     }
 
 
@@ -57,7 +57,7 @@ class App extends Component {
 
     render() {
 
-        const {data} = this.state;
+        const {data, lang} = this.state;
 
         if (this.state.loading) return (<Spinner/>);
 
@@ -65,7 +65,7 @@ class App extends Component {
             <>
 
                 <Header data={data} ChangeLang={this.ChangeLang}/>
-                <About data={data}/>
+                <About data={data} lang={lang}/>
                 <Resume data={data}/>
                 <Portfolio data={data}/>
                 <Contact data={data}/>

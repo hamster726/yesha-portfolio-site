@@ -36,6 +36,7 @@ const Description = styled.p`
 color: #666;
 font-size: 1rem;
 text-align: left;
+margin-right: auto;
 `
 
 const StyledCol = styled(Col)`

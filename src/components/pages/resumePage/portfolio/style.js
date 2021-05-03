@@ -51,8 +51,7 @@ max-height: 500px;
 overflow:hidden;
 
 background-color: white;
-
-
+  
 transition: 0.2s;
 
 
@@ -60,9 +59,9 @@ transition: 0.2s;
 &:hover {
 transform: translateY(-10px);
 
--webkit-box-shadow: 0px 20px 20px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 20px 20px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 20px 20px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0 20px 20px 0 rgba(0,0,0,0.75);
+-moz-box-shadow: 0 20px 20px 0 rgba(0,0,0,0.75);
+box-shadow: 0 20px 20px 0 rgba(0,0,0,0.75);
 }
 
 @media screen and (max-width: 768px) {

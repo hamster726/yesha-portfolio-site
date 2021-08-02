@@ -79,9 +79,8 @@ const ProjectImg = styled.img`
   width: 100%;
 `
 const ProjectDescription = styled.h4`
-  margin-top: 35px;
+  margin: 35px 0;
   font-size: 18px;
-  margin-bottom: 20px;
 `
 
 const Tools = styled(Row)`

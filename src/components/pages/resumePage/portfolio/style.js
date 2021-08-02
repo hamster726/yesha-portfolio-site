@@ -79,7 +79,7 @@ const ProjectImg = styled.img`
   width: 100%;
 `
 const ProjectDescription = styled.h4`
-  margin-top: 20px;
+  margin-top: 35px;
   font-size: 18px;
   margin-bottom: 20px;
 `
